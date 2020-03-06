@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3467DCDC-ADED-4FED-BAEC-AA4AE353868F}</ProjectGuid>
+    <RootNamespace>hook</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>E:\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>E:\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>E:\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>E:\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook\raknet;E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook\raknet;E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook\raknet;E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook\raknet;E:\Projects\C++\21 - RakNet Hook &amp; RPC\hook\hook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="game\C3dMarker.cpp" />
+    <ClCompile Include="game\C3dMarkers.cpp" />
+    <ClCompile Include="game\CAEAudioEntity.cpp" />
+    <ClCompile Include="game\CAERadioTrackManager.cpp" />
+    <ClCompile Include="game\CAESound.cpp" />
+    <ClCompile Include="game\CAEWeaponAudioEntity.cpp" />
+    <ClCompile Include="game\CAEWeatherAudioEntity.cpp" />
+    <ClCompile Include="game\CAnimatedBuilding.cpp" />
+    <ClCompile Include="game\CAnimBlendAssocGroup.cpp" />
+    <ClCompile Include="game\CAnimBlendAssociation.cpp" />
+    <ClCompile Include="game\CAnimBlendHierarchy.cpp" />
+    <ClCompile Include="game\CAnimBlendNode.cpp" />
+    <ClCompile Include="game\CAnimBlendSequence.cpp" />
+    <ClCompile Include="game\CAnimBlendStaticAssociation.cpp" />
+    <ClCompile Include="game\CAnimManager.cpp" />
+    <ClCompile Include="game\CAtomicModelInfo.cpp" />
+    <ClCompile Include="game\CAutomobile.cpp" />
+    <ClCompile Include="game\CBaseModelInfo.cpp" />
+    <ClCompile Include="game\CBike.cpp" />
+    <ClCompile Include="game\CBirds.cpp" />
+    <ClCompile Include="game\CBmx.cpp" />
+    <ClCompile Include="game\CBoat.cpp" />
+    <ClCompile Include="game\CBouncingPanel.cpp" />
+    <ClCompile Include="game\CBoundingBox.cpp" />
+    <ClCompile Include="game\CBox.cpp" />
+    <ClCompile Include="game\CBrightLights.cpp" />
+    <ClCompile Include="game\CBuilding.cpp" />
+    <ClCompile Include="game\CBulletInfo.cpp" />
+    <ClCompile Include="game\CBulletTrace.cpp" />
+    <ClCompile Include="game\CBulletTraces.cpp" />
+    <ClCompile Include="game\CCamera.cpp" />
+    <ClCompile Include="game\CCarAI.cpp" />
+    <ClCompile Include="game\CCarCtrl.cpp" />
+    <ClCompile Include="game\CCarEnterExit.cpp" />
+    <ClCompile Include="game\CCarGenerator.cpp" />
+    <ClCompile Include="game\CCheat.cpp" />
+    <ClCompile Include="game\CCheckpoint.cpp" />
+    <ClCompile Include="game\CCheckpoints.cpp" />
+    <ClCompile Include="game\CCivilianPed.cpp" />
+    <ClCompile Include="game\CClock.cpp" />
+    <ClCompile Include="game\CClothes.cpp" />
+    <ClCompile Include="game\CClothesBuilder.cpp" />
+    <ClCompile Include="game\CClouds.cpp" />
+    <ClCompile Include="game\CClumpModelInfo.cpp" />
+    <ClCompile Include="game\CColBox.cpp" />
+    <ClCompile Include="game\CColDisk.cpp" />
+    <ClCompile Include="game\CColLine.cpp" />
+    <ClCompile Include="game\CCollision.cpp" />
+    <ClCompile Include="game\CCollisionData.cpp" />
+    <ClCompile Include="game\CColModel.cpp" />
+    <ClCompile Include="game\CColourSet.cpp" />
+    <ClCompile Include="game\CColPoint.cpp" />
+    <ClCompile Include="game\CColSphere.cpp" />
+    <ClCompile Include="game\CColTriangle.cpp" />
+    <ClCompile Include="game\CColTrianglePlane.cpp" />
+    <ClCompile Include="game\CControllerConfigManager.cpp" />
+    <ClCompile Include="game\CCopPed.cpp" />
+    <ClCompile Include="game\CCoronas.cpp" />
+    <ClCompile Include="game\CCredits.cpp" />
+    <ClCompile Include="game\CCreepingFire.cpp" />
+    <ClCompile Include="game\CCustomCarEnvMapPipeline.cpp" />
+    <ClCompile Include="game\CCustomCarPlateMgr.cpp" />
+    <ClCompile Include="game\CCutsceneMgr.cpp" />
+    <ClCompile Include="game\CCutsceneObject.cpp" />
+    <ClCompile Include="game\CDamageManager.cpp" />
+    <ClCompile Include="game\CDarkel.cpp" />
+    <ClCompile Include="game\CDecision.cpp" />
+    <ClCompile Include="game\CDecisionSimple.cpp" />
+    <ClCompile Include="game\CDirectory.cpp" />
+    <ClCompile Include="game\CDoor.cpp" />
+    <ClCompile Include="game\CDraw.cpp" />
+    <ClCompile Include="game\CDummy.cpp" />
+    <ClCompile Include="game\CDummyObject.cpp" />
+    <ClCompile Include="game\CDummyPed.cpp" />
+    <ClCompile Include="game\CEmergencyPed.cpp" />
+    <ClCompile Include="game\CEntity.cpp" />
+    <ClCompile Include="game\CEntryExit.cpp" />
+    <ClCompile Include="game\CEntryExitManager.cpp" />
+    <ClCompile Include="game\CExplosion.cpp" />
+    <ClCompile Include="game\CFileLoader.cpp" />
+    <ClCompile Include="game\CFileMgr.cpp" />
+    <ClCompile Include="game\CFire.cpp" />
+    <ClCompile Include="game\CFireManager.cpp" />
+    <ClCompile Include="game\CFont.cpp" />
+    <ClCompile Include="game\CGame.cpp" />
+    <ClCompile Include="game\CGamma.cpp" />
+    <ClCompile Include="game\CGarages.cpp" />
+    <ClCompile Include="game\CGeneral.cpp" />
+    <ClCompile Include="game\cHandlingDataMgr.cpp" />
+    <ClCompile Include="game\CHandObject.cpp" />
+    <ClCompile Include="game\CHeli.cpp" />
+    <ClCompile Include="game\CHud.cpp" />
+    <ClCompile Include="game\CHudColours.cpp" />
+    <ClCompile Include="game\CIniFile.cpp" />
+    <ClCompile Include="game\CIplStore.cpp" />
+    <ClCompile Include="game\CKeyGen.cpp" />
+    <ClCompile Include="game\CLoadedCarGroup.cpp" />
+    <ClCompile Include="game\CLoadingScreen.cpp" />
+    <ClCompile Include="game\CLocalisation.cpp" />
+    <ClCompile Include="game\CMatrix.cpp" />
+    <ClCompile Include="game\CMatrixLink.cpp" />
+    <ClCompile Include="game\CMenuManager.cpp" />
+    <ClCompile Include="game\CMenuSystem.cpp" />
+    <ClCompile Include="game\CMessages.cpp" />
+    <ClCompile Include="game\CMirrors.cpp" />
+    <ClCompile Include="game\CMissionCleanup.cpp" />
+    <ClCompile Include="game\CModelInfo.cpp" />
+    <ClCompile Include="game\CModelInfoAccelerator.cpp" />
+    <ClCompile Include="game\CMonsterTruck.cpp" />
+    <ClCompile Include="game\CMotionBlurStreaks.cpp" />
+    <ClCompile Include="game\CObject.cpp" />
+    <ClCompile Include="game\COctTree.cpp" />
+    <ClCompile Include="game\COctTreeBase.cpp" />
+    <ClCompile Include="game\common.cpp" />
+    <ClCompile Include="game\CompressedVector.cpp" />
+    <ClCompile Include="game\CPad.cpp" />
+    <ClCompile Include="game\CPathFind.cpp" />
+    <ClCompile Include="game\CPed.cpp" />
+    <ClCompile Include="game\CPedClothesDesc.cpp" />
+    <ClCompile Include="game\CPedIK.cpp" />
+    <ClCompile Include="game\CPedIntelligence.cpp" />
+    <ClCompile Include="game\CPedModelInfo.cpp" />
+    <ClCompile Include="game\CPhysical.cpp" />
+    <ClCompile Include="game\CPickup.cpp" />
+    <ClCompile Include="game\CPickups.cpp" />
+    <ClCompile Include="game\CPlaceable.cpp" />
+    <ClCompile Include="game\CPlane.cpp" />
+    <ClCompile Include="game\CPlaneTrail.cpp" />
+    <ClCompile Include="game\CPlaneTrails.cpp" />
+    <ClCompile Include="game\CPlayerPed.cpp" />
+    <ClCompile Include="game\CPointLights.cpp" />
+    <ClCompile Include="game\CPolyBunch.cpp" />
+    <ClCompile Include="game\CPools.cpp" />
+    <ClCompile Include="game\CPopCycle.cpp" />
+    <ClCompile Include="game\CPopulation.cpp" />
+    <ClCompile Include="game\CProjectile.cpp" />
+    <ClCompile Include="game\CProjectileInfo.cpp" />
+    <ClCompile Include="game\CPtrList.cpp" />
+    <ClCompile Include="game\CPtrListDoubleLink.cpp" />
+    <ClCompile Include="game\CPtrListSingleLink.cpp" />
+    <ClCompile Include="game\CPtrNodeDoubleLink.cpp" />
+    <ClCompile Include="game\CPtrNodeSingleLink.cpp" />
+    <ClCompile Include="game\CQuadBike.cpp" />
+    <ClCompile Include="game\CQuadTreeNode.cpp" />
+    <ClCompile Include="game\CQuaternion.cpp" />
+    <ClCompile Include="game\CRadar.cpp" />
+    <ClCompile Include="game\CRealTimeShadow.cpp" />
+    <ClCompile Include="game\CRect.cpp" />
+    <ClCompile Include="game\CReferences.cpp" />
+    <ClCompile Include="game\CRegisteredCorona.cpp" />
+    <ClCompile Include="game\CRegisteredMotionBlurStreak.cpp" />
+    <ClCompile Include="game\CRenderer.cpp" />
+    <ClCompile Include="game\CRestart.cpp" />
+    <ClCompile Include="game\CRGBA.cpp" />
+    <ClCompile Include="game\CRope.cpp" />
+    <ClCompile Include="game\CRopes.cpp" />
+    <ClCompile Include="game\CRunningScript.cpp" />
+    <ClCompile Include="game\CScene.cpp" />
+    <ClCompile Include="game\CSetPiece.cpp" />
+    <ClCompile Include="game\CSetPieces.cpp" />
+    <ClCompile Include="game\CShadowCamera.cpp" />
+    <ClCompile Include="game\CShadows.cpp" />
+    <ClCompile Include="game\CShinyTexts.cpp" />
+    <ClCompile Include="game\CShotInfo.cpp" />
+    <ClCompile Include="game\CSimpleTransform.cpp" />
+    <ClCompile Include="game\CSpecialFX.cpp" />
+    <ClCompile Include="game\CSpecialPlateHandler.cpp" />
+    <ClCompile Include="game\CSphere.cpp" />
+    <ClCompile Include="game\CSprite.cpp" />
+    <ClCompile Include="game\CSprite2d.cpp" />
+    <ClCompile Include="game\CStats.cpp" />
+    <ClCompile Include="game\CStreaming.cpp" />
+    <ClCompile Include="game\CStreamingInfo.cpp" />
+    <ClCompile Include="game\CTask.cpp" />
+    <ClCompile Include="game\CTaskComplex.cpp" />
+    <ClCompile Include="game\CTaskComplexCopInCar.cpp" />
+    <ClCompile Include="game\CTaskComplexDie.cpp" />
+    <ClCompile Include="game\CTaskComplexEnterBoatAsDriver.cpp" />
+    <ClCompile Include="game\CTaskComplexEnterCar.cpp" />
+    <ClCompile Include="game\CTaskComplexEnterCarAsDriver.cpp" />
+    <ClCompile Include="game\CTaskComplexEnterCarAsPassenger.cpp" />
+    <ClCompile Include="game\CTaskComplexFacial.cpp" />
+    <ClCompile Include="game\CTaskComplexKillPedFromBoat.cpp" />
+    <ClCompile Include="game\CTaskComplexKillPedOnFoot.cpp" />
+    <ClCompile Include="game\CTaskComplexLeaveCar.cpp" />
+    <ClCompile Include="game\CTaskComplexPlayHandSignalAnim.cpp" />
+    <ClCompile Include="game\CTaskComplexProstituteSolicit.cpp" />
+    <ClCompile Include="game\CTaskComplexSunbathe.cpp" />
+    <ClCompile Include="game\CTaskComplexUseMobilePhone.cpp" />
+    <ClCompile Include="game\CTaskComplexWander.cpp" />
+    <ClCompile Include="game\CTaskComplexWanderStandard.cpp" />
+    <ClCompile Include="game\CTaskManager.cpp" />
+    <ClCompile Include="game\CTaskSimple.cpp" />
+    <ClCompile Include="game\CTaskSimpleAnim.cpp" />
+    <ClCompile Include="game\CTaskSimpleCarSetPedInAsDriver.cpp" />
+    <ClCompile Include="game\CTaskSimpleCarSetPedInAsPassenger.cpp" />
+    <ClCompile Include="game\CTaskSimpleCarSetPedOut.cpp" />
+    <ClCompile Include="game\CTaskSimpleChoking.cpp" />
+    <ClCompile Include="game\CTaskSimpleClimb.cpp" />
+    <ClCompile Include="game\CTaskSimpleDuck.cpp" />
+    <ClCompile Include="game\CTaskSimpleFacial.cpp" />
+    <ClCompile Include="game\CTaskSimpleFight.cpp" />
+    <ClCompile Include="game\CTaskSimpleGangDriveBy.cpp" />
+    <ClCompile Include="game\CTaskSimpleHoldEntity.cpp" />
+    <ClCompile Include="game\CTaskSimpleIKChain.cpp" />
+    <ClCompile Include="game\CTaskSimpleIKLookAt.cpp" />
+    <ClCompile Include="game\CTaskSimpleIKManager.cpp" />
+    <ClCompile Include="game\CTaskSimpleInAir.cpp" />
+    <ClCompile Include="game\CTaskSimpleJetPack.cpp" />
+    <ClCompile Include="game\CTaskSimplePlayerOnFoot.cpp" />
+    <ClCompile Include="game\CTaskSimpleRunAnim.cpp" />
+    <ClCompile Include="game\CTaskSimpleRunNamedAnim.cpp" />
+    <ClCompile Include="game\CTaskSimpleStandStill.cpp" />
+    <ClCompile Include="game\CTaskSimpleStealthKill.cpp" />
+    <ClCompile Include="game\CTaskSimpleSwim.cpp" />
+    <ClCompile Include="game\CTaskSimpleThrowProjectile.cpp" />
+    <ClCompile Include="game\CTaskSimpleTriggerLookAt.cpp" />
+    <ClCompile Include="game\CTaskSimpleUseGun.cpp" />
+    <ClCompile Include="game\CTaskTimer.cpp" />
+    <ClCompile Include="game\CTaskUtilityLineUpPedWithCar.cpp" />
+    <ClCompile Include="game\CText.cpp" />
+    <ClCompile Include="game\CTheCarGenerators.cpp" />
+    <ClCompile Include="game\CTheScripts.cpp" />
+    <ClCompile Include="game\CTheZones.cpp" />
+    <ClCompile Include="game\CTimeCycle.cpp" />
+    <ClCompile Include="game\CTimeModelInfo.cpp" />
+    <ClCompile Include="game\CTimer.cpp" />
+    <ClCompile Include="game\CTrailer.cpp" />
+    <ClCompile Include="game\CTrain.cpp" />
+    <ClCompile Include="game\CTrainNode.cpp" />
+    <ClCompile Include="game\cTransmission.cpp" />
+    <ClCompile Include="game\CTxdStore.cpp" />
+    <ClCompile Include="game\CUserDisplay.cpp" />
+    <ClCompile Include="game\CVector.cpp" />
+    <ClCompile Include="game\CVector2D.cpp" />
+    <ClCompile Include="game\CVehicle.cpp" />
+    <ClCompile Include="game\CVehicleModelInfo.cpp" />
+    <ClCompile Include="game\CVisibilityPlugins.cpp" />
+    <ClCompile Include="game\CWanted.cpp" />
+    <ClCompile Include="game\CWeapon.cpp" />
+    <ClCompile Include="game\CWeaponEffects.cpp" />
+    <ClCompile Include="game\CWeaponInfo.cpp" />
+    <ClCompile Include="game\CWeaponModelInfo.cpp" />
+    <ClCompile Include="game\CWeather.cpp" />
+    <ClCompile Include="game\CWorld.cpp" />
+    <ClCompile Include="game\CZone.cpp" />
+    <ClCompile Include="game\D3DIndexDataBuffer.cpp" />
+    <ClCompile Include="game\D3DResourceSystem.cpp" />
+    <ClCompile Include="game\D3DTextureBuffer.cpp" />
+    <ClCompile Include="game\FxBox_c.cpp" />
+    <ClCompile Include="game\FxFrustumInfo_c.cpp" />
+    <ClCompile Include="game\FxManager_c.cpp" />
+    <ClCompile Include="game\FxMemoryPool_c.cpp" />
+    <ClCompile Include="game\FxPlane_c.cpp" />
+    <ClCompile Include="game\FxPrtMult_c.cpp" />
+    <ClCompile Include="game\FxSphere_c.cpp" />
+    <ClCompile Include="game\FxSystemBP_c.cpp" />
+    <ClCompile Include="game\FxSystem_c.cpp" />
+    <ClCompile Include="game\Fx_c.cpp" />
+    <ClCompile Include="game\JPegCompress.cpp" />
+    <ClCompile Include="game\ListItem_c.cpp" />
+    <ClCompile Include="game\List_c.cpp" />
+    <ClCompile Include="game\NodeName.cpp" />
+    <ClCompile Include="game\PipelinePlugin.cpp" />
+    <ClCompile Include="game\RenderWare.cpp" />
+    <ClCompile Include="game\TxdDef.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="packet_handler.cpp" />
+    <ClCompile Include="raknet\BitStream.cpp" />
+    <ClCompile Include="raknet\PluginInterface.cpp" />
+    <ClCompile Include="raknet\RakHook.cpp" />
+    <ClCompile Include="samp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game\AnimBlendFrameData.h" />
+    <ClInclude Include="game\C2dEffect.h" />
+    <ClInclude Include="game\C3dMarker.h" />
+    <ClInclude Include="game\C3dMarkers.h" />
+    <ClInclude Include="game\CAEAudioEntity.h" />
+    <ClInclude Include="game\CAEExplosionAudioEntity.h" />
+    <ClInclude Include="game\CAEFireAudioEntity.h" />
+    <ClInclude Include="game\CAEPedAudioEntity.h" />
+    <ClInclude Include="game\CAEPedSpeechAudioEntity.h" />
+    <ClInclude Include="game\CAEPoliceScannerAudioEntity.h" />
+    <ClInclude Include="game\CAERadioTrackManager.h" />
+    <ClInclude Include="game\CAESound.h" />
+    <ClInclude Include="game\CAETwinLoopSoundEntity.h" />
+    <ClInclude Include="game\CAEVehicleAudioEntity.h" />
+    <ClInclude Include="game\CAEWeaponAudioEntity.h" />
+    <ClInclude Include="game\CAEWeatherAudioEntity.h" />
+    <ClInclude Include="game\CAnimatedBuilding.h" />
+    <ClInclude Include="game\CAnimationStyleDescriptor.h" />
+    <ClInclude Include="game\CAnimBlendAssocGroup.h" />
+    <ClInclude Include="game\CAnimBlendAssociation.h" />
+    <ClInclude Include="game\CAnimBlendClumpData.h" />
+    <ClInclude Include="game\CAnimBlendHierarchy.h" />
+    <ClInclude Include="game\CAnimBlendNode.h" />
+    <ClInclude Include="game\CAnimBlendSequence.h" />
+    <ClInclude Include="game\CAnimBlendStaticAssociation.h" />
+    <ClInclude Include="game\CAnimBlock.h" />
+    <ClInclude Include="game\CAnimManager.h" />
+    <ClInclude Include="game\CAtomicModelInfo.h" />
+    <ClInclude Include="game\CAttractorScanner.h" />
+    <ClInclude Include="game\CAutomobile.h" />
+    <ClInclude Include="game\CAutoPilot.h" />
+    <ClInclude Include="game\CBaseModelInfo.h" />
+    <ClInclude Include="game\CBike.h" />
+    <ClInclude Include="game\CBirds.h" />
+    <ClInclude Include="game\CBmx.h" />
+    <ClInclude Include="game\CBoat.h" />
+    <ClInclude Include="game\CBouncingPanel.h" />
+    <ClInclude Include="game\CBoundingBox.h" />
+    <ClInclude Include="game\CBox.h" />
+    <ClInclude Include="game\CBrightLights.h" />
+    <ClInclude Include="game\CBuilding.h" />
+    <ClInclude Include="game\CBulletInfo.h" />
+    <ClInclude Include="game\CBulletTrace.h" />
+    <ClInclude Include="game\CBulletTraces.h" />
+    <ClInclude Include="game\CCam.h" />
+    <ClInclude Include="game\CCamera.h" />
+    <ClInclude Include="game\CCamPathSplines.h" />
+    <ClInclude Include="game\CCarAI.h" />
+    <ClInclude Include="game\CCarCtrl.h" />
+    <ClInclude Include="game\CCarEnterExit.h" />
+    <ClInclude Include="game\CCarGenerator.h" />
+    <ClInclude Include="game\CCheat.h" />
+    <ClInclude Include="game\CCheckpoint.h" />
+    <ClInclude Include="game\CCheckpoints.h" />
+    <ClInclude Include="game\CCivilianPed.h" />
+    <ClInclude Include="game\CClock.h" />
+    <ClInclude Include="game\CClothes.h" />
+    <ClInclude Include="game\CClothesBuilder.h" />
+    <ClInclude Include="game\CClouds.h" />
+    <ClInclude Include="game\CClumpModelInfo.h" />
+    <ClInclude Include="game\CColBox.h" />
+    <ClInclude Include="game\CColDisk.h" />
+    <ClInclude Include="game\CColLine.h" />
+    <ClInclude Include="game\CCollision.h" />
+    <ClInclude Include="game\CCollisionData.h" />
+    <ClInclude Include="game\CColModel.h" />
+    <ClInclude Include="game\CColourSet.h" />
+    <ClInclude Include="game\CColPoint.h" />
+    <ClInclude Include="game\CColSphere.h" />
+    <ClInclude Include="game\CColTriangle.h" />
+    <ClInclude Include="game\CColTrianglePlane.h" />
+    <ClInclude Include="game\CControllerConfigManager.h" />
+    <ClInclude Include="game\CCopPed.h" />
+    <ClInclude Include="game\CCoronas.h" />
+    <ClInclude Include="game\CCredits.h" />
+    <ClInclude Include="game\CCreepingFire.h" />
+    <ClInclude Include="game\CCrimeBeingQd.h" />
+    <ClInclude Include="game\CCustomCarEnvMapPipeline.h" />
+    <ClInclude Include="game\CCustomCarPlateMgr.h" />
+    <ClInclude Include="game\CCutsceneMgr.h" />
+    <ClInclude Include="game\CCutsceneObject.h" />
+    <ClInclude Include="game\CDamageManager.h" />
+    <ClInclude Include="game\CDarkel.h" />
+    <ClInclude Include="game\CDecision.h" />
+    <ClInclude Include="game\CDecisionMaker.h" />
+    <ClInclude Include="game\CDecisionSimple.h" />
+    <ClInclude Include="game\CDirectory.h" />
+    <ClInclude Include="game\CDoor.h" />
+    <ClInclude Include="game\CDraw.h" />
+    <ClInclude Include="game\CDummy.h" />
+    <ClInclude Include="game\CDummyObject.h" />
+    <ClInclude Include="game\CDummyPed.h" />
+    <ClInclude Include="game\CEmergencyPed.h" />
+    <ClInclude Include="game\CEntity.h" />
+    <ClInclude Include="game\CEntityScanner.h" />
+    <ClInclude Include="game\CEntryExit.h" />
+    <ClInclude Include="game\CEntryExitManager.h" />
+    <ClInclude Include="game\CEventGroup.h" />
+    <ClInclude Include="game\CEventHandler.h" />
+    <ClInclude Include="game\CEventScanner.h" />
+    <ClInclude Include="game\CExplosion.h" />
+    <ClInclude Include="game\CFileLoader.h" />
+    <ClInclude Include="game\CFileMgr.h" />
+    <ClInclude Include="game\CFileObjectInstance.h" />
+    <ClInclude Include="game\CFire.h" />
+    <ClInclude Include="game\CFireManager.h" />
+    <ClInclude Include="game\CFont.h" />
+    <ClInclude Include="game\CGame.h" />
+    <ClInclude Include="game\CGamma.h" />
+    <ClInclude Include="game\CGarages.h" />
+    <ClInclude Include="game\CGeneral.h" />
+    <ClInclude Include="game\cHandlingDataMgr.h" />
+    <ClInclude Include="game\CHandObject.h" />
+    <ClInclude Include="game\CHeli.h" />
+    <ClInclude Include="game\CHud.h" />
+    <ClInclude Include="game\CHudColours.h" />
+    <ClInclude Include="game\CIniFile.h" />
+    <ClInclude Include="game\CIplStore.h" />
+    <ClInclude Include="game\CKeyGen.h" />
+    <ClInclude Include="game\CLink.h" />
+    <ClInclude Include="game\CLinkList.h" />
+    <ClInclude Include="game\CLoadedCarGroup.h" />
+    <ClInclude Include="game\CLoadingScreen.h" />
+    <ClInclude Include="game\CLocalisation.h" />
+    <ClInclude Include="game\CMatrix.h" />
+    <ClInclude Include="game\CMatrixLink.h" />
+    <ClInclude Include="game\CMenuManager.h" />
+    <ClInclude Include="game\CMenuSystem.h" />
+    <ClInclude Include="game\CMessages.h" />
+    <ClInclude Include="game\CMirrors.h" />
+    <ClInclude Include="game\CMissionCleanup.h" />
+    <ClInclude Include="game\CModelInfo.h" />
+    <ClInclude Include="game\CModelInfoAccelerator.h" />
+    <ClInclude Include="game\CMonsterTruck.h" />
+    <ClInclude Include="game\CMotionBlurStreaks.h" />
+    <ClInclude Include="game\CNodeAddress.h" />
+    <ClInclude Include="game\CObject.h" />
+    <ClInclude Include="game\CObjectInfo.h" />
+    <ClInclude Include="game\COctTree.h" />
+    <ClInclude Include="game\COctTreeBase.h" />
+    <ClInclude Include="game\common.h" />
+    <ClInclude Include="game\CompressedVector.h" />
+    <ClInclude Include="game\COnscreenTimer.h" />
+    <ClInclude Include="game\CPad.h" />
+    <ClInclude Include="game\CPathFind.h" />
+    <ClInclude Include="game\CPed.h" />
+    <ClInclude Include="game\CPedAcquaintance.h" />
+    <ClInclude Include="game\CPedClothesDesc.h" />
+    <ClInclude Include="game\CPedIK.h" />
+    <ClInclude Include="game\CPedIntelligence.h" />
+    <ClInclude Include="game\CPedModelInfo.h" />
+    <ClInclude Include="game\CPhysical.h" />
+    <ClInclude Include="game\CPickup.h" />
+    <ClInclude Include="game\CPickups.h" />
+    <ClInclude Include="game\CPlaceable.h" />
+    <ClInclude Include="game\CPlane.h" />
+    <ClInclude Include="game\CPlaneTrail.h" />
+    <ClInclude Include="game\CPlaneTrails.h" />
+    <ClInclude Include="game\CPlayerData.h" />
+    <ClInclude Include="game\CPlayerInfo.h" />
+    <ClInclude Include="game\CPlayerPed.h" />
+    <ClInclude Include="game\CPointLights.h" />
+    <ClInclude Include="game\CPolyBunch.h" />
+    <ClInclude Include="game\CPool.h" />
+    <ClInclude Include="game\CPools.h" />
+    <ClInclude Include="game\CPopCycle.h" />
+    <ClInclude Include="game\CPopulation.h" />
+    <ClInclude Include="game\CProjectile.h" />
+    <ClInclude Include="game\CProjectileInfo.h" />
+    <ClInclude Include="game\CPtrList.h" />
+    <ClInclude Include="game\CPtrListDoubleLink.h" />
+    <ClInclude Include="game\CPtrListSingleLink.h" />
+    <ClInclude Include="game\CPtrNode.h" />
+    <ClInclude Include="game\CPtrNodeDoubleLink.h" />
+    <ClInclude Include="game\CPtrNodeSingleLink.h" />
+    <ClInclude Include="game\CQuadBike.h" />
+    <ClInclude Include="game\CQuadTreeNode.h" />
+    <ClInclude Include="game\CQuaternion.h" />
+    <ClInclude Include="game\CQueuedMode.h" />
+    <ClInclude Include="game\CRadar.h" />
+    <ClInclude Include="game\CRealTimeShadow.h" />
+    <ClInclude Include="game\CRect.h" />
+    <ClInclude Include="game\CReference.h" />
+    <ClInclude Include="game\CReferences.h" />
+    <ClInclude Include="game\CRegisteredCorona.h" />
+    <ClInclude Include="game\CRegisteredMotionBlurStreak.h" />
+    <ClInclude Include="game\CRenderer.h" />
+    <ClInclude Include="game\CRepeatSector.h" />
+    <ClInclude Include="game\CRestart.h" />
+    <ClInclude Include="game\CRGBA.h" />
+    <ClInclude Include="game\CRideAnimData.h" />
+    <ClInclude Include="game\CRope.h" />
+    <ClInclude Include="game\CRopes.h" />
+    <ClInclude Include="game\CRunningScript.h" />
+    <ClInclude Include="game\CScene.h" />
+    <ClInclude Include="game\CSector.h" />
+    <ClInclude Include="game\CSetPiece.h" />
+    <ClInclude Include="game\CSetPieces.h" />
+    <ClInclude Include="game\CShadowCamera.h" />
+    <ClInclude Include="game\CShadows.h" />
+    <ClInclude Include="game\CShinyTexts.h" />
+    <ClInclude Include="game\CShotInfo.h" />
+    <ClInclude Include="game\CSimpleTransform.h" />
+    <ClInclude Include="game\CSpecialFX.h" />
+    <ClInclude Include="game\CSpecialPlateHandler.h" />
+    <ClInclude Include="game\CSphere.h" />
+    <ClInclude Include="game\CSprite.h" />
+    <ClInclude Include="game\CSprite2d.h" />
+    <ClInclude Include="game\CStats.h" />
+    <ClInclude Include="game\CStore.h" />
+    <ClInclude Include="game\CStoredCollPoly.h" />
+    <ClInclude Include="game\CStreaming.h" />
+    <ClInclude Include="game\CStreamingInfo.h" />
+    <ClInclude Include="game\CTask.h" />
+    <ClInclude Include="game\CTaskComplex.h" />
+    <ClInclude Include="game\CTaskComplexCopInCar.h" />
+    <ClInclude Include="game\CTaskComplexDie.h" />
+    <ClInclude Include="game\CTaskComplexEnterBoatAsDriver.h" />
+    <ClInclude Include="game\CTaskComplexEnterCar.h" />
+    <ClInclude Include="game\CTaskComplexEnterCarAsDriver.h" />
+    <ClInclude Include="game\CTaskComplexEnterCarAsPassenger.h" />
+    <ClInclude Include="game\CTaskComplexFacial.h" />
+    <ClInclude Include="game\CTaskComplexKillPedFromBoat.h" />
+    <ClInclude Include="game\CTaskComplexKillPedOnFoot.h" />
+    <ClInclude Include="game\CTaskComplexLeaveCar.h" />
+    <ClInclude Include="game\CTaskComplexPlayHandSignalAnim.h" />
+    <ClInclude Include="game\CTaskComplexProstituteSolicit.h" />
+    <ClInclude Include="game\CTaskComplexSunbathe.h" />
+    <ClInclude Include="game\CTaskComplexUseMobilePhone.h" />
+    <ClInclude Include="game\CTaskComplexWander.h" />
+    <ClInclude Include="game\CTaskComplexWanderStandard.h" />
+    <ClInclude Include="game\CTaskManager.h" />
+    <ClInclude Include="game\CTaskSimple.h" />
+    <ClInclude Include="game\CTaskSimpleAnim.h" />
+    <ClInclude Include="game\CTaskSimpleCarSetPedInAsDriver.h" />
+    <ClInclude Include="game\CTaskSimpleCarSetPedInAsPassenger.h" />
+    <ClInclude Include="game\CTaskSimpleCarSetPedOut.h" />
+    <ClInclude Include="game\CTaskSimpleChoking.h" />
+    <ClInclude Include="game\CTaskSimpleClimb.h" />
+    <ClInclude Include="game\CTaskSimpleDuck.h" />
+    <ClInclude Include="game\CTaskSimpleFacial.h" />
+    <ClInclude Include="game\CTaskSimpleFight.h" />
+    <ClInclude Include="game\CTaskSimpleGangDriveBy.h" />
+    <ClInclude Include="game\CTaskSimpleHoldEntity.h" />
+    <ClInclude Include="game\CTaskSimpleIKChain.h" />
+    <ClInclude Include="game\CTaskSimpleIKLookAt.h" />
+    <ClInclude Include="game\CTaskSimpleIKManager.h" />
+    <ClInclude Include="game\CTaskSimpleInAir.h" />
+    <ClInclude Include="game\CTaskSimpleJetpack.h" />
+    <ClInclude Include="game\CTaskSimplePlayerOnFoot.h" />
+    <ClInclude Include="game\CTaskSimpleRunAnim.h" />
+    <ClInclude Include="game\CTaskSimpleRunNamedAnim.h" />
+    <ClInclude Include="game\CTaskSimpleStandStill.h" />
+    <ClInclude Include="game\CTaskSimpleStealthKill.h" />
+    <ClInclude Include="game\CTaskSimpleSwim.h" />
+    <ClInclude Include="game\CTaskSimpleThrowProjectile.h" />
+    <ClInclude Include="game\CTaskSimpleTriggerLookAt.h" />
+    <ClInclude Include="game\CTaskSimpleUseGun.h" />
+    <ClInclude Include="game\CTaskTimer.h" />
+    <ClInclude Include="game\CTaskUtilityLineUpPedWithCar.h" />
+    <ClInclude Include="game\CText.h" />
+    <ClInclude Include="game\CTheCarGenerators.h" />
+    <ClInclude Include="game\CTheScripts.h" />
+    <ClInclude Include="game\CTheZones.h" />
+    <ClInclude Include="game\CTimeCycle.h" />
+    <ClInclude Include="game\CTimeCycleBox.h" />
+    <ClInclude Include="game\CTimeModelInfo.h" />
+    <ClInclude Include="game\CTimer.h" />
+    <ClInclude Include="game\CTrailer.h" />
+    <ClInclude Include="game\CTrain.h" />
+    <ClInclude Include="game\CTrainNode.h" />
+    <ClInclude Include="game\cTransmission.h" />
+    <ClInclude Include="game\CTxdStore.h" />
+    <ClInclude Include="game\CUserDisplay.h" />
+    <ClInclude Include="game\CVector.h" />
+    <ClInclude Include="game\CVector2D.h" />
+    <ClInclude Include="game\CVehicle.h" />
+    <ClInclude Include="game\CVehicleModelInfo.h" />
+    <ClInclude Include="game\CVisibilityPlugins.h" />
+    <ClInclude Include="game\CWanted.h" />
+    <ClInclude Include="game\CWeapon.h" />
+    <ClInclude Include="game\CWeaponEffects.h" />
+    <ClInclude Include="game\CWeaponInfo.h" />
+    <ClInclude Include="game\CWeaponModelInfo.h" />
+    <ClInclude Include="game\CWeather.h" />
+    <ClInclude Include="game\CWorld.h" />
+    <ClInclude Include="game\CZone.h" />
+    <ClInclude Include="game\CZoneInfo.h" />
+    <ClInclude Include="game\D3DIndexDataBuffer.h" />
+    <ClInclude Include="game\D3DResourceSystem.h" />
+    <ClInclude Include="game\D3DTextureBuffer.h" />
+    <ClInclude Include="game\eAudioEvents.h" />
+    <ClInclude Include="game\eCamMode.h" />
+    <ClInclude Include="game\eClothesModelPart.h" />
+    <ClInclude Include="game\eClothesTexturePart.h" />
+    <ClInclude Include="game\eCopType.h" />
+    <ClInclude Include="game\eCrimeType.h" />
+    <ClInclude Include="game\eDecisionMakerEvents.h" />
+    <ClInclude Include="game\eEntityStatus.h" />
+    <ClInclude Include="game\eEntityType.h" />
+    <ClInclude Include="game\eEventType.h" />
+    <ClInclude Include="game\eModelID.h" />
+    <ClInclude Include="game\ePadButtons.h" />
+    <ClInclude Include="game\ePedAnims.h" />
+    <ClInclude Include="game\ePedBones.h" />
+    <ClInclude Include="game\ePedModel.h" />
+    <ClInclude Include="game\ePedPieceTypes.h" />
+    <ClInclude Include="game\ePedState.h" />
+    <ClInclude Include="game\ePedType.h" />
+    <ClInclude Include="game\eScriptCommands.h" />
+    <ClInclude Include="game\eSprintType.h" />
+    <ClInclude Include="game\eStatModAbilities.h" />
+    <ClInclude Include="game\eStats.h" />
+    <ClInclude Include="game\eStatsReactions.h" />
+    <ClInclude Include="game\eSurfaceType.h" />
+    <ClInclude Include="game\eTaskType.h" />
+    <ClInclude Include="game\eVehicleHandlingFlags.h" />
+    <ClInclude Include="game\eVehicleHandlingModelFlags.h" />
+    <ClInclude Include="game\eWeaponFire.h" />
+    <ClInclude Include="game\eWeaponFlags.h" />
+    <ClInclude Include="game\eWeaponModel.h" />
+    <ClInclude Include="game\eWeaponType.h" />
+    <ClInclude Include="game\eWinchType.h" />
+    <ClInclude Include="game\FxBox_c.h" />
+    <ClInclude Include="game\FxEmitterBP_c.h" />
+    <ClInclude Include="game\FxFrustumInfo_c.h" />
+    <ClInclude Include="game\FxInfoManager_c.h" />
+    <ClInclude Include="game\FxManager_c.h" />
+    <ClInclude Include="game\FxMemoryPool_c.h" />
+    <ClInclude Include="game\FxPlane_c.h" />
+    <ClInclude Include="game\FxPrimBP_c.h" />
+    <ClInclude Include="game\FxPrtMult_c.h" />
+    <ClInclude Include="game\FxSphere_c.h" />
+    <ClInclude Include="game\FxSystemBP_c.h" />
+    <ClInclude Include="game\FxSystem_c.h" />
+    <ClInclude Include="game\Fx_c.h" />
+    <ClInclude Include="game\IplDef.h" />
+    <ClInclude Include="game\JPegCompress.h" />
+    <ClInclude Include="game\ListItem_c.h" />
+    <ClInclude Include="game\List_c.h" />
+    <ClInclude Include="game\NodeName.h" />
+    <ClInclude Include="game\PipelinePlugin.h" />
+    <ClInclude Include="game\PluginBase.h" />
+    <ClInclude Include="game\RenderWare.h" />
+    <ClInclude Include="game\RpHAnimBlendInterpFrame.h" />
+    <ClInclude Include="game\RwObjectNameIdAssocation.h" />
+    <ClInclude Include="game\rw\rpcriter.h" />
+    <ClInclude Include="game\rw\rperror.h" />
+    <ClInclude Include="game\rw\rphanim.h" />
+    <ClInclude Include="game\rw\rpmatfx.h" />
+    <ClInclude Include="game\rw\rpskin.h" />
+    <ClInclude Include="game\rw\rpuvanim.h" />
+    <ClInclude Include="game\rw\rpworld.h" />
+    <ClInclude Include="game\rw\rtanim.h" />
+    <ClInclude Include="game\rw\rtdict.h" />
+    <ClInclude Include="game\rw\rtquat.h" />
+    <ClInclude Include="game\rw\rwcore.h" />
+    <ClInclude Include="game\rw\rwplcore.h" />
+    <ClInclude Include="game\rw\skeleton.h" />
+    <ClInclude Include="game\SArray.h" />
+    <ClInclude Include="game\tBikeHandlingData.h" />
+    <ClInclude Include="game\tBinaryIplFile.h" />
+    <ClInclude Include="game\tBoatHandlingData.h" />
+    <ClInclude Include="game\tFlyingHandlingData.h" />
+    <ClInclude Include="game\tHandlingData.h" />
+    <ClInclude Include="game\tPickupMessage.h" />
+    <ClInclude Include="game\tTransmissionGear.h" />
+    <ClInclude Include="game\TxdDef.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="modules.h" />
+    <ClInclude Include="packet_handler.h" />
+    <ClInclude Include="raknet\BitStream.h" />
+    <ClInclude Include="raknet\NetworkTypes.h" />
+    <ClInclude Include="raknet\PacketEnumerations.h" />
+    <ClInclude Include="raknet\PluginInterface.h" />
+    <ClInclude Include="raknet\RakClient.h" />
+    <ClInclude Include="raknet\RakHook.h" />
+    <ClInclude Include="samp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game\rw\errcom.def" />
+    <None Include="game\rw\errcore.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
